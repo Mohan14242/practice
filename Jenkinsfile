@@ -11,5 +11,10 @@ pipeline{
                 echo 'this isthe mohan'
             }
         }
+        stage('chiru'){
+            steps{
+                echo 'there is nothign we can do'
+            }
+        }
     }
 }
