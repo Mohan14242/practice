@@ -6,5 +6,10 @@ pipeline{
                 echo "thhi is the unit teting stage"
             }
         }
+        stage('integration testing'){
+            steps{
+                echo 'this isthe mohan'
+            }
+        }
     }
 }
