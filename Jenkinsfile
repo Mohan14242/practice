@@ -1,20 +1,17 @@
-pipeline{
-    agent any
-    stages{
-        stage('unit testing'){
-            steps{
-                echo "thhi is the unit teting stage"
-            }
-        }
-        stage('integration testing'){
-            steps{
-                echo 'this isthe mohan'
-            }
-        }
-        stage('chiru'){
-            steps{
-                echo 'there is nothign we can do'
-            }
-        }
+node {
+    stage('Build') {
+        // Custom build steps
+        sh 'npm install'
+        sh 'npm build'
+    }
+
+    stage('Test') {
+        // Custom test steps
+        sh 'npm test'
+    }
+
+    stage('Deploy') {
+        // Custom deployment steps
+        sh 'kubectl apply -f deployment.yaml'
     }
 }
